@@ -33,6 +33,18 @@
       alert("Something went wrong!");
     }
   }
+
+  const booking = {
+  name: document.querySelector('input[placeholder="Full Name"]').value,
+  email: document.querySelector('input[placeholder="Email"]').value,
+  phone: document.querySelector('input[placeholder="Phone Number"]').value,
+  location: document.querySelector('select').value,
+  date: document.querySelector('input[type="date"]').value,
+  time: document.querySelector('input[type="time"]').value,
+  service: document.querySelectorAll('select')[1].value
+};
+saveBooking(booking);
+  
 </script>
 
 </head>
