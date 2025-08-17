@@ -34,17 +34,20 @@
     }
   }
 
+  window.submitBooking = async function () {
   const booking = {
-  name: document.querySelector('input[placeholder="Full Name"]').value,
-  email: document.querySelector('input[placeholder="Email"]').value,
-  phone: document.querySelector('input[placeholder="Phone Number"]').value,
-  location: document.querySelector('select').value,
-  date: document.querySelector('input[type="date"]').value,
-  time: document.querySelector('input[type="time"]').value,
-  service: document.querySelectorAll('select')[1].value
-};
-saveBooking(booking);
-  
+    name: document.querySelector('input[placeholder="Full Name"]').value,
+    email: document.querySelector('input[placeholder="Email"]').value,
+    phone: document.querySelector('input[placeholder="Phone Number"]').value,
+    location: document.querySelectorAll('select')[0].value,
+    date: document.querySelector('input[type="date"]').value,
+    time: document.querySelector('input[type="time"]').value,
+    service: document.querySelectorAll('select')[1].value,
+  };
+
+  await saveBooking(booking);
+  nextStep(6);
+}
 </script>
 
 </head>
@@ -91,7 +94,7 @@ saveBooking(booking);
         <option>Theragun Mini - 15 mins</option>
         <option>Theragun Mini- 30 mins</option>
       </select>
-      <button onclick="nextStep(6)" class="w-full bg-green-600 text-white p-2 rounded hover:bg-green-700">Confirm Booking</button>
+      <button onclick="submitBooking()" class="w-full bg-green-600 text-white p-2 rounded hover:bg-green-700">Confirm Booking</button>
     </div>
 
     <div id="step6" class="bg-white p-6 rounded-lg shadow-md hidden text-center">
