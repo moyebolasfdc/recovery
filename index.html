@@ -68,5 +68,32 @@
       document.getElementById('step' + step).classList.remove('hidden');
     }
   </script>
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_BUCKET",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  async function saveBooking(bookingData) {
+    try {
+      await addDoc(collection(db, "appointments"), bookingData);
+      console.log("Booking saved!");
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  }
+
+  window.saveBooking = saveBooking;
+</script>
 </body>
 </html>
