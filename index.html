@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pre-In-Post Recovery</title>
+  <title>Recovery</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
@@ -69,10 +69,9 @@ saveBooking(booking);
     <div id="step3" class="bg-white p-6 rounded-lg shadow-md hidden">
       <h2 class="text-xl font-semibold mb-4">Select Location</h2>
       <select class="w-full p-2 mb-4 border rounded">
-        <option>Golden Gate Park</option>
+        <option>Recovery Office Building (75 Moss St, San Francisco) </option>
         <option>Mission Playground</option>
-        <option>Salesforce Park Rooftop</option>
-        <option>Tourist Basketball SF</option>
+        <option>Dolores Park</option>
       </select>
       <button onclick="nextStep(4)" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Next: Date & Time</button>
     </div>
@@ -87,10 +86,10 @@ saveBooking(booking);
     <div id="step5" class="bg-white p-6 rounded-lg shadow-md hidden">
       <h2 class="text-xl font-semibold mb-4">Select Service</h2>
       <select class="w-full p-2 mb-2 border rounded">
-        <option>Normatec - 15 mins</option>
-        <option>Normatec - 30 mins</option>
-        <option>Theragun - 15 mins</option>
-        <option>Theragun - 30 mins</option>
+        <option>Hyperice Normatec 3 - 15 mins</option>
+        <option>Hyperice Normatec 3 - 30 mins</option>
+        <option>Theragun Mini - 15 mins</option>
+        <option>Theragun Mini- 30 mins</option>
       </select>
       <button onclick="nextStep(6)" class="w-full bg-green-600 text-white p-2 rounded hover:bg-green-700">Confirm Booking</button>
     </div>
